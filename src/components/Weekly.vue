@@ -33,7 +33,7 @@
 
     </table>
   <center>
-    <router-link to="/" class="btn btn-outline-success">Anasayfa</router-link>
+    <router-link to="/" class="btn btn-outline-success mb-2">Anasayfa</router-link>
   </center>
   <div class="fixed-bottom"><center>Furkan Meclis &copy; 2021</center></div>
 </div>
