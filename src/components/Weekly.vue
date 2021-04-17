@@ -33,9 +33,9 @@
 
     </table>
   <center>
-    <router-link to="/" class="btn btn-outline-success mb-2">Anasayfa</router-link>
+    <router-link to="/" class="btn btn-outline-success mb-3">Anasayfa</router-link>
   </center>
-  <div class="fixed-bottom"><center>Furkan Meclis &copy; 2021</center></div>
+  <div class="fixed-bottom" style="background-color: white;width: 100%"><center>Furkan Meclis &copy; 2021</center></div>
 </div>
 
 </template>
