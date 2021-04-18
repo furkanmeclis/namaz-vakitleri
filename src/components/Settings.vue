@@ -54,7 +54,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-              <button type="button" class="btn btn-primary" @click="kaydet()" data-bs-dismiss="modal">Kaydet</button>
+              <button type="button" v-if="!cookie" class="btn btn-primary" @click="kaydet()" data-bs-dismiss="modal">Kaydet</button>
             </div>
           </div>
         </div>
