@@ -9,7 +9,7 @@ Vue.use(VueRouter);
 
 const routes = [
     { path: "/", component: Home },
-    { path:"/haftalik",component: Weekly }
+    { path:"/aylik",component: Weekly }
 ];
 
 export const router = new VueRouter({
