@@ -32,7 +32,7 @@
               <span v-else class="form-group"><div v-if="errors && errors.length" class="alert alert-danger">
                   Günlük Sorgu Limitine Ulaştınız
                 </div><form v-else onsubmit="return false">
-
+<div class="alert alert-danger" v-if="hata != false">{{hata2}}</div>
               <label  class="form-label">Ülke Seçin</label>
               <select class="form-control"  @change="ulke($event)">
                 <option  selected disabled hidden value="">Ülke Seçiniz</option>
@@ -54,7 +54,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-
+              <button type="button" class="btn btn-primary" @click="kaydet()" data-bs-dismiss="modal">Kaydet</button>
             </div>
           </div>
         </div>
@@ -94,7 +94,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-              <button type="button" class="btn btn-primary" @click="kaydet()" data-bs-dismiss="modal">Kaydet</button>
+              <button type="button" class="btn btn-primary" @click="kaydet2()" data-bs-dismiss="modal">Kaydet</button>
             </div>
           </div>
         </div>
@@ -122,6 +122,7 @@ created() {
       ilceAdi2:null,
       ilceiD2:null,
       posts: [],
+      hata2:false,
       sehirler:[],
       ilceler:[],
       ulkeler:[],
@@ -146,7 +147,7 @@ created() {
         for(var i=0; i < this.sehirler.length; i++){
           if( this.sehirler[i].SehirID == event.target.value){
             this.sehirAdi = this.sehirler[i].SehirAdi;
-            this.$cookies.set("Sehir",this.sehirAdi);
+
           }
         }
 
@@ -157,7 +158,7 @@ created() {
       for(var i=0; i < this.ulkeler.length; i++){
         if( this.ulkeler[i].UlkeID == event.target.value){
           this.ulkeAdi = this.ulkeler[i].UlkeAdi;
-          this.$cookies.set("Ulke",this.ulkeAdi);
+
         }
       }
       this.getSehir(event.target.value)
@@ -167,11 +168,11 @@ created() {
       for(var i=0; i < this.ilceler.length; i++){
         if( this.ilceler[i].IlceID == event.target.value){
           this.ilceAdi = this.ilceler[i].IlceAdi;
-          this.$cookies.set("Ilce",this.ilceAdi);
+
         }
       }
       this.ilceiD = event.target.value;
-      this.$cookies.set("IlceID",this.ilceiD);
+
 
     },
     il2(event){
@@ -208,6 +209,21 @@ created() {
 
     },
     kaydet(){
+      if (this.ulkeAdi == null){
+        this.hata2 = "Lütfen Ülke Seçiniz";
+      }else if (this.sehirAdi == null){
+        this.hata2 = "Lütfen Şehir Seçiniz";
+      }else if (this.ilceAdi == null){
+        this.hata2 = "Lütfen İlçe Seçiniz";
+      }else{
+
+        this.$cookies.set("Ulke",this.ulkeAdi);
+        this.$cookies.set("Sehir",this.sehirAdi);
+        this.$cookies.set("Ilce",this.ilceAdi);
+        this.$cookies.set("IlceID",this.ilceiD);
+      }
+    },
+    kaydet2(){
       if (this.ulkeAdi2 == null){
         this.hata = "Lütfen Ülke Seçiniz";
       }else if (this.sehirAdi2 == null){
