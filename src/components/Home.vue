@@ -30,6 +30,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
   name: 'Home',
   created() {
@@ -45,6 +46,7 @@ export default {
 
     };
   },
+
   methods: {
 
     getPosts() {

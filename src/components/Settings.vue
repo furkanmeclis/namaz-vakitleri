@@ -221,6 +221,7 @@ created() {
         this.$cookies.set("Sehir",this.sehirAdi);
         this.$cookies.set("Ilce",this.ilceAdi);
         this.$cookies.set("IlceID",this.ilceiD);
+        location.reload();
       }
     },
     kaydet2(){
@@ -239,6 +240,7 @@ created() {
         this.$cookies.set("Sehir",this.sehirAdi2);
         this.$cookies.set("Ilce",this.ilceAdi2);
         this.$cookies.set("IlceID",this.ilceiD2);
+        location.reload();
       }
     },
     getIlce(id){
