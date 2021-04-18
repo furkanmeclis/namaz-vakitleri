@@ -48,7 +48,7 @@
                 <option  selected disabled hidden value="">İlçe Seçiniz</option>
                 <option v-for="ilce in ilceler" :key="ilce.IlceID" :value="ilce.IlceID">{{ilce.IlceAdi}}</option>
               </select>
-              <button type="reset" class="btn btn-danger">Sıfırla</button>
+             
             </form>
               </span>
             </div>
