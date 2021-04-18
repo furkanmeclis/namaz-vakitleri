@@ -204,7 +204,7 @@ created() {
 
         }
       }
-      this.ilceiD = event.target.value;
+      this.ilceiD2 = event.target.value;
 
 
     },
