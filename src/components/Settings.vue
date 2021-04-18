@@ -29,7 +29,9 @@
  Lokasyon Değiştir
       </button></center>
             </span>
-              <span v-else class="form-group"><form onsubmit="return false">
+              <span v-else class="form-group"><div v-if="errors && errors.length" class="alert alert-danger">
+                  Günlük Sorgu Limitine Ulaştınız
+                </div><form v-else onsubmit="return false">
 
               <label  class="form-label">Ülke Seçin</label>
               <select class="form-control"  @change="ulke($event)">
@@ -67,10 +69,11 @@
             </div>
             <div class="modal-body">
               <div class="alert alert-danger" v-if="hata != false">{{hata}}</div>
-              <form onsubmit="return false">
-                <div v-if="errors && errors.length" class="alert alert-danger">
-                  Günlük Sorgu Limitine Ulaştınız
-                </div>
+              <div v-if="errors && errors.length" class="alert alert-danger">
+                Günlük Sorgu Limitine Ulaştınız
+              </div>
+              <form v-else onsubmit="return false">
+
                 <label  class="form-label">Ülke Seçin</label>
                 <select class="form-control"  @change="ulke2($event)">
                   <option  selected disabled hidden value="">Ülke Seçiniz</option>
