@@ -125,9 +125,9 @@ export default {
   data() {
     return {
       posts: [],
-      ilce:this.$cookies.get("Ilce"),
-      sehir:this.$cookies.get("Sehir"),
-      ulke:this.$cookies.get("Ulke"),
+      ilce:this.$cookies.get("Ilce") || "ADANA",
+      sehir:this.$cookies.get("Sehir") || "ADANA",
+      ulke:this.$cookies.get("Ulke") || "TÜRKİYE",
       errors: []
     };
   },

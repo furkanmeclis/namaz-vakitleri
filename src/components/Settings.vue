@@ -48,7 +48,7 @@
                 <option  selected disabled hidden value="">İlçe Seçiniz</option>
                 <option v-for="ilce in ilceler" :key="ilce.IlceID" :value="ilce.IlceID">{{ilce.IlceAdi}}</option>
               </select>
-             
+
             </form>
               </span>
             </div>
@@ -94,7 +94,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-              <button type="button" class="btn btn-primary" @click="kaydet()">Kaydet</button>
+              <button type="button" class="btn btn-primary" @click="kaydet()" data-bs-dismiss="modal">Kaydet</button>
             </div>
           </div>
         </div>
@@ -215,7 +215,10 @@ created() {
       }else if (this.ilceAdi2 == null){
         this.hata = "Lütfen İlçe Seçiniz";
       }else{
-        this.$cookies.removeAll();
+        this.$cookies.remove("Ulke");
+        this.$cookies.remove("Sehir");
+        this.$cookies.remove("Ilce");
+        this.$cookies.remove("IlceID");
         this.$cookies.set("Ulke",this.ulkeAdi2);
         this.$cookies.set("Sehir",this.sehirAdi2);
         this.$cookies.set("Ilce",this.ilceAdi2);
