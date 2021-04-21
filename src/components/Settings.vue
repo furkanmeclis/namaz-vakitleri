@@ -1,7 +1,7 @@
 <template>
     <div>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary fixed-bottom ms-auto " style="margin-right: 10px;margin-bottom: 10px" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" class="btn btn-warning fixed-bottom ms-auto " style="margin-right: 10px;margin-bottom: 10px" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <img
             src="https://img2.pngio.com/filewindows-settings-app-iconpng-wikimedia-commons-settings-icon-png-2295_2295.png"
             width="25"
